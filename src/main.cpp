@@ -25,12 +25,8 @@ int main(int argc, char** argv) {
     std::cout << "Starting Stock Plotter..." << std::endl;
     std::cout << "Symbol: " << symbol << ", Days: " << days << ", Output: " << output << std::endl;
 
-    // 1. Load Config
     Config config(configPath);
-    // Note: Yahoo Finance doesn't strictly need the API key for this endpoint, 
-    // but we load it as per requirements.
 
-    // 2. Fetch Data
     StockClient client;
     std::string rawData = client.fetchStockData(symbol, days);
     
@@ -39,7 +35,6 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    // 3. Parse Data
     DataParser parser;
     StockData stockData = parser.parseJson(rawData);
     
@@ -48,7 +43,6 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    // 4. Render Plot
     PlotRenderer renderer;
     renderer.renderPlot(stockData, symbol, output, showPlot);
 

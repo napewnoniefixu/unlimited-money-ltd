@@ -19,18 +19,17 @@ void PlotRenderer::renderPlot(const StockData& data, const std::string& symbol, 
     xlabel("Date");
     ylabel("Price (USD)");
 
-    // Handle X-axis labels (dates)
     if (data.dates.size() > 1) {
         std::vector<double> ticks;
         std::vector<std::string> labels;
         
         size_t n = data.dates.size();
-        size_t num_ticks = 5; // We want roughly 5 labels
+        size_t num_ticks = 5;
         if (n < num_ticks) num_ticks = n;
 
         for (size_t i = 0; i < num_ticks; ++i) {
             size_t idx = i * (n - 1) / (num_ticks - 1);
-            ticks.push_back(idx + 1); // matplot++ uses 1-based indexing for plot(y)
+            ticks.push_back(idx + 1);
             labels.push_back(data.dates[idx]);
         }
         

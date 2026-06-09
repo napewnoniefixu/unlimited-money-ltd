@@ -3,7 +3,7 @@
 #include <chrono>
 #include <iostream>
 
-StockClient::StockClient() {}
+StockClient::StockClient() = default;
 
 std::string StockClient::fetchStockData(const std::string& symbol, int days) {
     auto now = std::chrono::system_clock::now();
