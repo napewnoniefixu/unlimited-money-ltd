@@ -22,6 +22,7 @@ StockData DataParser::parseJson(const std::string& jsonData) {
         if (!result.contains("timestamp") || !result.contains("indicators") || 
             !result["indicators"].contains("quote") || result["indicators"]["quote"].empty() ||
             !result["indicators"]["quote"][0].contains("close")) {
+
             std::cerr << "Parser error: Missing required data fields in JSON." << std::endl;
             return data;
         }
