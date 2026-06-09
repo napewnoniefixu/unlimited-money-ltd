@@ -92,8 +92,6 @@ Program ładuje klucz API z pliku `config.json` (zgodnie z wymogami projektowymi
 
 ## 🤖 Oświadczenie o użyciu AI
 
-Oświadczam, że podczas tworzenia tej aplikacji korzystałem ze wsparcia modeli sztucznej inteligencji (Gemini). AI zostało wykorzystane do:
-* Projektowania architektury klas i doboru bibliotek.
-* Rozwiązywania problemów z kompatybilnością flag kompilatora MinGW.
-* Implementacji logiki parsowania specyficznego formatu JSON z Yahoo Finance.
-* Przygotowania i aktualizacji dokumentacji technicznej.
+Narzędzia oparte na sztucznej inteligencji posłużyły jako asystent pomocniczy do:
+* Zaplanowania czytelnej struktury katalogów i plików w projekcie.
+* Wygenerowania, sformatowania i korekty dokumentacji technicznej (w tym tego pliku README).
