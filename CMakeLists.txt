@@ -10,11 +10,11 @@ include(FetchContent)
 FetchContent_Declare(
     cpr
     GIT_REPOSITORY https://github.com/libcpr/cpr.git
-    GIT_TAG 1.10.x # Or a specific version
+    GIT_TAG 1.10.x
 )
 FetchContent_MakeAvailable(cpr)
 
-# nlohmann/json
+#nlohmann/json
 FetchContent_Declare(
     json
     GIT_REPOSITORY https://github.com/nlohmann/json.git
@@ -22,7 +22,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(json)
 
-# matplotplusplus
+#matplotplusplus
 set(MATPLOTPP_BUILD_WITH_PEDANTIC_WARNINGS OFF CACHE BOOL "" FORCE)
 FetchContent_Declare(
     matplotplusplus
@@ -31,7 +31,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(matplotplusplus)
 
-# CLI11
+#CLI11
 FetchContent_Declare(
     cli11
     GIT_REPOSITORY https://github.com/CLIUtils/CLI11.git
@@ -39,7 +39,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(cli11)
 
-# Main Executable
+#Main Executable
 add_executable(stock_plotter
     src/main.cpp
     src/Config.cpp
