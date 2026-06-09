@@ -93,5 +93,6 @@ Program ładuje klucz API z pliku `config.json` (zgodnie z wymogami projektowymi
 ## 🤖 Oświadczenie o użyciu AI
 
 Narzędzia oparte na sztucznej inteligencji posłużyły jako asystent pomocniczy do:
+* Zrozumienia dokumentacji i przyspieszenia nauki korzystania z bibliotek zewnętrznych
 * Zaplanowania czytelnej struktury katalogów i plików w projekcie.
 * Wygenerowania, sformatowania i korekty dokumentacji technicznej (w tym tego pliku README).
