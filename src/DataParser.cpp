@@ -27,9 +27,6 @@ StockData DataParser::parseJson(const std::string& jsonData) {
             return data;
         }
 
-        std::vector<long> timestamps = result["timestamp"].get<std::vector<long>>();
-        std::vector<double> closePrices = result["indicators"]["quote"][0]["close"].get<std::vector<double>>();
-
         data.prices.clear();
         data.dates.clear();
         
@@ -37,7 +34,7 @@ StockData DataParser::parseJson(const std::string& jsonData) {
         auto& timeJ = result["timestamp"];
         
         for (size_t i = 0; i < timeJ.size() && i < closeJ.size(); ++i) {
-            if (!closeJ[i].is_number()) continue;
+            if (!closeJ[i].is_number() || !timeJ[i].is_number()) continue;
             
             double price = closeJ[i].get<double>();
             long ts = timeJ[i].get<long>();
@@ -46,6 +43,7 @@ StockData DataParser::parseJson(const std::string& jsonData) {
             
             auto t = static_cast<std::time_t>(ts);
             std::tm* tm_ptr = std::gmtime(&t);
+            if (!tm_ptr) continue;
             std::stringstream ss;
             ss << std::put_time(tm_ptr, "%Y-%m-%d");
             data.dates.push_back(ss.str());
